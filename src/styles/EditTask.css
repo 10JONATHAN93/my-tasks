@@ -25,6 +25,85 @@
     border:1px solid rgba(45, 248, 221, 0.616);
 }
 
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Para que esté encima de todo */
+}
+
+.modal-content {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #0ae7f7f6;
+    padding: 20px;
+    border-radius: 5px;
+    width: 500px;
+    height: 400px;
+}
+
+h2 {
+    color: var(--primary-text);
+    text-shadow: 
+        -1px -1px 0 var(--tertiary-text),  
+         1px -1px 0 var(--tertiary-text),  
+        -1px  1px 0 var(--tertiary-text),  
+         1px  1px 0 var(--tertiary-text); /* Borde negro alrededor del texto */
+}
+
+.textarea-edit {
+    width: 90%;
+    height: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: center;  /* Alinea los botones a los extremos */
+    gap: 10px;  /* Espacio entre los botones */
+    width: 100%;  /* Asegura que ocupe todo el ancho disponible */
+}
+
+.saveButton,
+.cancelButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    width: 48%;
+}
+
+.saveButton {
+    background-color: #4CAF50;
+}
+
+.saveButton:hover {
+    background-color: #45a049;
+}
+
+.cancelButton {
+    background-color: #f44336;
+}
+
+.cancelButton:hover {
+    background-color: #e53935;
+}
+
 @media (max-width: 700px) {
     .editTask {
         margin: 0;
@@ -32,11 +111,23 @@
         font-size: 18px;
         max-width: 100%; 
     }
+    .modal-content {
+        display: flex;
+        flex-direction: column;
+        margin: auto 10px;
+    }
+    .modal-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    .saveButton, .cancelButton {
+        width: 90%;
+    }
 }
 
 @media (max-width: 430px) {
     .editTask {
-      align-items: center;
-      font-size: 10px;
+        align-items: center;
+        font-size: 10px;
     }
 }

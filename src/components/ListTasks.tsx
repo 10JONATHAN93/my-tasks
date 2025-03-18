@@ -5,9 +5,8 @@ import { EditTask } from "./EditTask";
 import "../styles/ListTasks.css"
 
 const ListTasks = () => {
-    const { tasks, toggleCompleted, editTask, deleteTask } = useTask();
-    console.log("Renderizando ListTasks con tareas:", tasks);
-    console.log()
+    const { tasks, toggleCompleted, editTask, deleteTask,  } = useTask();
+    // console.log("Renderizando ListTasks con tareas:", tasks);
 
     return (
         <ul className="listTasks-container">
@@ -19,12 +18,15 @@ const ListTasks = () => {
                         onCompleted={() => toggleCompleted(task.id)}
                     />
                     <span className={task.completed ? "text completed" : "text"}>{task.text}</span>
-                    <EditTask onEdit={(newText) => editTask(task.id, newText)}/>
+                    <EditTask 
+                        onEdit={(newText) => editTask(task.id, newText)}
+                        currentText={task.text}
+                    />
                     <DeleteTask onDelete={() => deleteTask(task.id)}/>
                 </li>
             )) :
             <p>no hay tareas guardadas</p>
-            }
+            }   
         </ul>
     )
 }

@@ -47,7 +47,7 @@ const TaskProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
             completed: false,
         }
         setTasks([...tasks, newTask]);
-        console.log("Tareas actuales:", tasks);
+        // console.log("Tareas actuales:", tasks);
     }
 
     // marcando tareas completadas

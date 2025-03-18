@@ -5,6 +5,11 @@ h1 {
     color: var(--primary-text);
 }
 
+p {
+    color: var(--primary-text);
+    font-size: 25px;
+}
+
 .taskForm-container {
     display: flex;
     flex-direction: row;

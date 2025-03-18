@@ -1,29 +1,59 @@
-import { useState } from "react"
 import "../styles/EditTask.css"
+import { useOpenModal } from "../hooks/useOpenModal";
+import React from "react";
 
 type EditTaskProps = {
     onEdit: (newText: string) => void;
+    currentText: string;
 }
 
-const EditTask = ({ onEdit }: EditTaskProps) => {
-    const [newText] = useState('');
+const EditTask = ({ onEdit, currentText }: EditTaskProps) => {
+    const { isModalOpen,
+        openModal,
+        closeModal,
+        handleSubmit,
+        newText,
+        setNewText } = useOpenModal();
 
     const handleEdit = () => {
-        let userInput = '';
+        setNewText(currentText)
+        openModal();
+    }
 
-        while (!userInput) { // Se ejecuta hasta que haya un texto válido
-            userInput = window.prompt("Editar tarea:", newText)?.trim() || ""; // Evita null y quita espacios
-            if (userInput === "") {
-                alert("El texto no puede estar vacío. Intenta de nuevo.");
-            }
-        }
-    
-        onEdit(userInput); // Guarda el texto válido
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setNewText(event.target.value)
     }
 
     return(
         <>
+
             <span className="editTask" onClick={handleEdit}> ✏️ </span>
+            {isModalOpen && (
+                <div className="modal">
+                    <div className="modal-content">
+                        <h2>EDITAR TAREA</h2>
+                        <input 
+                            className="textarea-edit"
+                            type="text"
+                            value={newText}
+                            onChange={handleChange}
+                            placeholder="Editar tarea..."
+                        />
+
+                        <div className="modal-actions">
+                            <button className="saveButton"
+                                onClick={() => {handleSubmit(); onEdit(newText); closeModal(); }}
+                            >Guardar</button>
+
+                            <button
+                                className="cancelButton"
+                                onClick={closeModal}
+                            >Cancelar</button>
+                        </div>
+                    </div>
+
+                </div>
+            )}
         </>
 
 
