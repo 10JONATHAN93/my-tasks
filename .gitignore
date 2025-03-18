@@ -1,0 +1,37 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencias de Node
+node_modules
+dist
+dist-ssr
+*.local
+
+# Archivos de entorno
+.env
+
+# Archivos compilados
+/build/
+out/
+
+# Archivos de editor y configuración
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# Archivos generados por el sistema
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Otros archivos que no necesitas
+*.tgz

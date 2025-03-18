@@ -1,0 +1,45 @@
+.inputTask {
+    align-items: center;
+    margin: auto;
+    padding-left: 10px;
+    width: 70%;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: var(--primary-bg);
+    color:var(--primary-text);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.616);
+}
+
+.inputTask::placeholder {
+    padding-left: 10px;
+    color:var(--secondary-text);
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.inputTask:focus {
+    outline: none;
+}
+
+
+@media(max-width: 700px) {
+    .inputTask {
+        width: 100%;
+        max-width: 400px;
+        font-size: 18px;
+    }
+    .inputTask::placeholder {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 430px) {
+    .inputTask {
+      align-items: center;
+      font-size: 18px;
+      min-width: 90%;
+      width: 200px;
+    }
+}

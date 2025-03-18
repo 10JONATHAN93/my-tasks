@@ -1,0 +1,35 @@
+
+h1 {
+    display: flex;
+    justify-content: center;
+    color: var(--primary-text);
+}
+
+.taskForm-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    min-width: 500px;
+    height: auto;
+    margin-top: 10vh;
+    gap: 20px;
+}
+
+@media(max-width: 700px) {
+    h1 {
+        width: auto;
+        font-size: 30px;
+    }
+    .taskForm-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        min-width: 100%;
+        height: auto;
+        row-gap: 15px;
+    }
+}

@@ -1,0 +1,62 @@
+:root {
+  --primary-text: #ffffff; /* Blanco para que resalte sobre fondos oscuros */
+  --secondary-text: #ffd725; /* Un amarillo suave que combina con el fondo */
+  --tertiary-text: #7a4d94; /* Un tono morado sutil para el texto terciario */
+  
+  --primary-bg: #7a4d94; /* Púrpura, combinando con el fondo principal */
+  --secondary-bg: #c94f94; /* Rosa oscuro para un contraste atractivo */
+  --tertiary-bg: #ff7f47; /* Naranja retro, para dar un toque vibrante */
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh; /* Ocupa toda la pantalla */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  font-family: Vegur, 'ui-serif', Verdana, sans-serif;
+
+  background: linear-gradient(45deg, #7a4d94, #c94f94, #ff7f47, #ffdf4f);
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite;
+}
+
+/* Animación del gradiente */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  body {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+}
